@@ -1,0 +1,125 @@
+<header class="site-header" id="site-header" role="banner">
+  <div class="header__inner container">
+
+    <a href="/" class="header__logo" aria-label="{{ site.name }} — home">
+      <span class="header__logo-mark" aria-hidden="true">SH</span>
+      <span class="header__logo-text">{{ site.shortName }}</span>
+      <span class="header__logo-sub">Productions</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Primary navigation">
+      <ul class="header__nav-list" role="list">
+
+        <li class="header__nav-item">
+          <a href="/" class="header__nav-link{% if currentPage == 'home' %} is-active{% endif %}"
+             {% if currentPage == 'home' %}aria-current="page"{% endif %}>Home</a>
+        </li>
+
+        <li class="header__nav-item">
+          <a href="/about/" class="header__nav-link{% if currentPage == 'about' %} is-active{% endif %}"
+             {% if currentPage == 'about' %}aria-current="page"{% endif %}>About</a>
+        </li>
+
+        <li class="header__nav-item header__nav-item--dropdown">
+          <button class="header__nav-link header__dropdown-trigger"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="services-dropdown">
+            Services
+            <svg class="header__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </button>
+
+          <div class="header__dropdown" id="services-dropdown" role="menu" aria-label="Services menu">
+            <div class="header__dropdown-inner">
+              <div class="header__dropdown-col">
+                <p class="header__dropdown-heading">Active Services</p>
+                {% for svc in navigation.services %}
+                  {% if svc.phase == 1 %}
+                    <a href="{{ svc.url }}"
+                       class="header__dropdown-link{% if currentPage == svc.key %} is-active{% endif %}"
+                       role="menuitem">
+                      <span class="header__dropdown-icon" aria-hidden="true">{{ svc.icon }}</span>
+                      <span>
+                        <strong>{{ svc.label }}</strong>
+                        <em>{{ svc.tagline }}</em>
+                      </span>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="header__dropdown-col">
+                <p class="header__dropdown-heading">Coming Soon</p>
+                {% for svc in navigation.services %}
+                  {% if svc.phase == 2 %}
+                    <a href="{{ svc.url }}"
+                       class="header__dropdown-link header__dropdown-link--soon"
+                       role="menuitem">
+                      <span class="header__dropdown-icon" aria-hidden="true">{{ svc.icon }}</span>
+                      <span>
+                        <strong>{{ svc.label }}</strong>
+                        <em>{{ svc.tagline }}</em>
+                      </span>
+                      <span class="header__dropdown-badge">Soon</span>
+                    </a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a href="/contact/" class="btn btn--primary header__cta">Get in Touch</a>
+      <button class="header__hamburger"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span class="header__bar"></span>
+        <span class="header__bar"></span>
+        <span class="header__bar"></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-menu__inner">
+    <div class="mobile-menu__top">
+      <a href="/" class="header__logo">
+        <span class="header__logo-mark">SH</span>
+        <span class="header__logo-text">{{ site.shortName }}</span>
+      </a>
+      <button class="mobile-menu__close" aria-label="Close navigation">✕</button>
+    </div>
+    <a href="/"       class="mobile-menu__link{% if currentPage == 'home' %} is-active{% endif %}">Home</a>
+    <a href="/about/" class="mobile-menu__link{% if currentPage == 'about' %} is-active{% endif %}">About</a>
+    <div class="mobile-menu__divider"><span>Active Services</span></div>
+    {% for svc in navigation.services %}
+      {% if svc.phase == 1 %}
+        <a href="{{ svc.url }}"
+           class="mobile-menu__link mobile-menu__link--service{% if currentPage == svc.key %} is-active{% endif %}">
+          <span aria-hidden="true">{{ svc.icon }}</span> {{ svc.label }}
+        </a>
+      {% endif %}
+    {% endfor %}
+    <div class="mobile-menu__divider"><span>Coming Soon</span></div>
+    {% for svc in navigation.services %}
+      {% if svc.phase == 2 %}
+        <a href="{{ svc.url }}" class="mobile-menu__link mobile-menu__link--soon">
+          <span aria-hidden="true">{{ svc.icon }}</span> {{ svc.label }}
+          <span class="mobile-menu__badge">Soon</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+    <div class="mobile-menu__cta">
+      <a href="/contact/" class="btn btn--primary btn--full">Get in Touch</a>
+    </div>
+  </div>
+</div>
+<div class="mobile-menu__overlay" id="mobile-overlay" aria-hidden="true"></div>

@@ -1,0 +1,115 @@
+---
+layout: base.njk
+title: Artist Management — StageHaus Productions
+pageDescription: Boutique artist management from StageHaus Productions — rate card creation, EPK development, release planning, and growth strategy for independent artists.
+currentPage: artist-management
+bodyClass: page-artist-management
+tags: phase1
+---
+
+{% from "macros/components.njk" import pageHero, processStep %}
+
+{{ pageHero(
+  "Artist Management",
+  "Your Career,<br>Handled Directly.",
+  "StageHaus artist management is hands-on, boutique, and personal. You deal with one person who is invested in what you're building — not a rotating cast of assistants.",
+  "Artist Management"
+) }}
+
+<section class="section">
+  <div class="container">
+    <div class="about-split">
+      <div>
+        <span class="section-label">What's Included</span>
+        <h2>Management That<br>Does the Work</h2>
+        <p>Artist management gets thrown around loosely in this industry. A lot of "managers" send a few emails and take a percentage. StageHaus management is operational — rate card creation, EPK development, tech rider prep, release coordination, and growth strategy, all executed directly.</p>
+        <p>Because StageHaus is a single-operator studio, the roster is intentionally limited. That's not a weakness — it means every artist I work with gets full attention, not a fraction of it.</p>
+
+        <ul class="feature-list" style="margin-top: 2rem;">
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Rate card creation — what to charge and how to structure it</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>EPK development — bio, press photos direction, one-sheet</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Technical rider creation and revision</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Release planning — timeline, assets, rollout coordination</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Growth strategy — where to play, what to prioritize, what to skip</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Direct communication — you talk to me, not a coordinator</span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div class="card">
+          <div class="card__icon" aria-hidden="true">📋</div>
+          <h4>Rate Card Creation</h4>
+          <p>Most independent artists undercharge because they don't know what the market looks like. I help you build a rate card that's grounded in reality — what venues pay, what's negotiable, and how to structure your ask.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon" aria-hidden="true">📁</div>
+          <h4>EPK & Tech Rider Development</h4>
+          <p>Your Electronic Press Kit is what gets you taken seriously by promoters and venues. Your tech rider is what gets you a decent soundcheck. Both need to exist and both need to be right.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon" aria-hidden="true">🗓️</div>
+          <h4>Release Planning</h4>
+          <p>A release without a plan is just uploading files. I help coordinate the timeline — what drops when, what needs to exist before it goes live, and how to build momentum around it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section section--dark" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">How Management Works</span>
+      <h2 id="process-heading">From First Call to Ongoing Work</h2>
+    </div>
+    <div class="grid-auto">
+      {{ processStep("01", "Honest Assessment", "We start with where you actually are — not where you want to be. Your current booking rate, what materials exist, what gaps are costing you opportunities.") }}
+      {{ processStep("02", "Build the Foundation", "Rate card, EPK, tech rider, and any missing materials get built or revised. These are the tools you need before anything else makes sense.") }}
+      {{ processStep("03", "Set the Strategy", "Where should you be playing? What markets make sense at your level? What should you be charging? We map this out together based on real data and experience.") }}
+      {{ processStep("04", "Execute Ongoing", "Once the foundation is solid, management becomes about execution — outreach, follow-up, coordination, and making sure everything stays aligned with the plan.") }}
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="container" style="max-width: 780px; margin-inline: auto;">
+    <div class="section-header section-header--center">
+      <span class="section-label">Honest About Capacity</span>
+      <h2>A Note on Roster Size</h2>
+    </div>
+    <div class="card" style="text-align: center; padding: 3rem;">
+      <p style="font-family: var(--ff-display); font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; color: var(--clr-ivory); font-style: italic; max-width: none;">StageHaus is a single-operator studio. I don't manage 40 artists. I manage a small number of artists well. If you're looking for a management company with a large team and a full agency infrastructure, that's not what this is — and I'd rather tell you that upfront than waste your time.</p>
+      <a href="/contact/" class="btn btn--primary" style="margin-top: 2rem; display: inline-flex;">See If We're a Fit →</a>
+    </div>
+  </div>
+</section>
+
+{% set ctaSectionLabel = "Artist Management" %}
+{% set ctaHeading = "Let's Talk About<br>Where You're Headed." %}
+{% set ctaSubtext = "Reach out with where you are and what you're working on. We'll have an honest conversation about whether StageHaus management makes sense for you." %}
+{% set ctaPrimaryLabel = "Start the Conversation" %}
+{% set ctaSecondaryLabel = "View All Services" %}
+{% set ctaSecondaryUrl = "/#services" %}
+{% include "partials/cta-band.njk" %}

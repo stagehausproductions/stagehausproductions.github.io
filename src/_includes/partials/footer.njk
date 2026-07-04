@@ -1,0 +1,79 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer__inner container">
+
+    <div class="footer__top">
+
+      <div class="footer__brand">
+        <a href="/" class="footer__logo" aria-label="{{ site.name }} home">
+          <span class="header__logo-mark" aria-hidden="true">SH</span>
+          <span class="header__logo-text">{{ site.shortName }}</span>
+          <span class="header__logo-sub">Productions</span>
+        </a>
+        <p class="footer__tagline">{{ site.tagline }}</p>
+        <p class="footer__about">Boutique production studio based in Tulsa, Oklahoma. One person, full accountability, hands-on every step.</p>
+        <div class="footer__social">
+          <a href="{{ site.social.instagram }}" class="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="{{ site.social.twitter }}"   class="footer__social-link" aria-label="X / Twitter" target="_blank" rel="noopener">𝕏</a>
+          <a href="{{ site.social.linkedin }}"  class="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener">LI</a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-heading">Services</h3>
+        <ul class="footer__links" role="list">
+          {% for svc in navigation.services %}
+            {% if svc.phase == 1 %}
+              <li><a href="{{ svc.url }}" class="footer__link">{{ svc.label }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-heading">Coming Soon</h3>
+        <ul class="footer__links" role="list">
+          {% for svc in navigation.services %}
+            {% if svc.phase == 2 %}
+              <li>
+                <a href="{{ svc.url }}" class="footer__link footer__link--soon">
+                  {{ svc.label }}
+                  <span class="footer__badge">Soon</span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3 class="footer__col-heading">Contact</h3>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">General</span>
+          <a href="mailto:{{ site.email }}" class="footer__link">{{ site.email }}</a>
+        </div>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">Booking</span>
+          <a href="mailto:{{ site.emailBooking }}" class="footer__link">{{ site.emailBooking }}</a>
+        </div>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">Management</span>
+          <a href="mailto:{{ site.emailManagement }}" class="footer__link">{{ site.emailManagement }}</a>
+        </div>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">Location</span>
+          <span class="footer__link-text">{{ site.location }}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copy">© {{ site.name }}. All rights reserved. Tulsa, Oklahoma.</p>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="#" class="footer__legal-link">Privacy</a>
+        <a href="#" class="footer__legal-link">Terms</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>

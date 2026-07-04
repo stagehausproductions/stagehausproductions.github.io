@@ -1,0 +1,285 @@
+---
+layout: base.njk
+title: Website Development — StageHaus Productions
+pageDescription: Artist websites built by StageHaus Productions — fast, mobile-first, and designed to convert fans into followers, buyers, and show attendees.
+currentPage: website-development
+bodyClass: page-website-development
+tags: phase1
+---
+
+{% from "macros/components.njk" import pageHero, processStep, testimonialCard %}
+
+{{ pageHero(
+  "Website Development",
+  "Your Digital Home.<br>Built to Convert.",
+  "Your website is the one piece of digital real estate you actually own. We build artist sites that are fast, visually sharp, and strategically structured to grow your audience and your income.",
+  "Services",
+  "/#services"
+) }}
+
+{# ── OVERVIEW ──────────────────────────────────────────────── #}
+<section class="section">
+  <div class="container">
+    <div class="about-split">
+      <div class="about-split__text">
+        <span class="section-label">Our Approach</span>
+        <h2>Artist Sites Designed<br>With Purpose</h2>
+        <p>Too many artist websites are digital brochures — pretty but passive. We build sites that do work: capturing email leads, driving show ticket sales, integrating merch stores, and telling your story in a way that converts casual listeners into invested fans.</p>
+        <p style="margin-top:1rem;">Every site we build is custom — not a Squarespace template with a logo swap. We design around your visual identity, write SEO-optimized copy, integrate your streaming links and socials, and hand you a site you're proud to put on a business card.</p>
+        <p style="margin-top:1rem;">We also develop and maintain a library of artist site templates that StageHaus management clients can deploy in days — purpose-built for the music industry, optimized from the ground up.</p>
+
+        <ul class="feature-list" style="margin-top:1.75rem;">
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Custom design aligned to your visual identity</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Mobile-first, performance-optimized builds</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Merch store integration (Square / Stripe / Bandcamp)</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Show listings and ticketing integration</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Email list capture and CRM integration</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>EPK (Electronic Press Kit) pages for media and booking</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="about-split__cards">
+        <div class="card" style="grid-column:span 2;">
+          <span class="section-label">Tech We Build On</span>
+          <div class="grid-2" style="margin-top:1rem;gap:.75rem;">
+            <div style="padding:.6rem 1rem;background:rgba(200,93,40,0.08);border-radius:6px;border:1px solid rgba(200,93,40,0.2);font-family:var(--ff-mono);font-size:var(--fs-sm);color:var(--clr-cream);">Eleventy (11ty)</div>
+            <div style="padding:.6rem 1rem;background:rgba(200,93,40,0.08);border-radius:6px;border:1px solid rgba(200,93,40,0.2);font-family:var(--ff-mono);font-size:var(--fs-sm);color:var(--clr-cream);">Nunjucks Templates</div>
+            <div style="padding:.6rem 1rem;background:rgba(200,93,40,0.08);border-radius:6px;border:1px solid rgba(200,93,40,0.2);font-family:var(--ff-mono);font-size:var(--fs-sm);color:var(--clr-cream);">GitHub Pages / Netlify</div>
+            <div style="padding:.6rem 1rem;background:rgba(200,93,40,0.08);border-radius:6px;border:1px solid rgba(200,93,40,0.2);font-family:var(--ff-mono);font-size:var(--fs-sm);color:var(--clr-cream);">Square / Stripe</div>
+            <div style="padding:.6rem 1rem;background:rgba(200,93,40,0.08);border-radius:6px;border:1px solid rgba(200,93,40,0.2);font-family:var(--ff-mono);font-size:var(--fs-sm);color:var(--clr-cream);">Mailchimp / ConvertKit</div>
+            <div style="padding:.6rem 1rem;background:rgba(200,93,40,0.08);border-radius:6px;border:1px solid rgba(200,93,40,0.2);font-family:var(--ff-mono);font-size:var(--fs-sm);color:var(--clr-cream);">Figma (Design Source)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+{# ── SERVICE OFFERINGS ─────────────────────────────────────── #}
+<section class="section section--dark" aria-labelledby="offerings-heading">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">What We Build</span>
+      <h2 id="offerings-heading">Every Type of Artist<br>Digital Property</h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◈</div>
+        <h3>Artist Home Sites</h3>
+        <p>Your primary digital presence — bio, music, shows, press kit, links, merch. Structured for SEO and first impressions, designed to keep visitors longer and act faster.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◉</div>
+        <h3>Electronic Press Kits</h3>
+        <p>Dedicated EPK pages built for industry contacts — stage/tech specs, press photos, clips, bio in multiple lengths, booking contact, and a streaming embed. Everything a booker or journalist needs.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◎</div>
+        <h3>Tour &amp; Campaign Sites</h3>
+        <p>Dedicated microsites for major tours, album releases, or brand campaigns — single-focus, high-conversion pages with countdown timers, ticket links, and email capture.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">⬡</div>
+        <h3>Merch Storefronts</h3>
+        <p>Standalone or integrated storefronts connected to Square or Stripe. Product pages, cart logic, checkout, and order confirmation — all custom-designed to match your brand.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◆</div>
+        <h3>Maintenance &amp; Hosting</h3>
+        <p>We don't just build and disappear. Ongoing maintenance packages keep your site updated, fast, and secure. Show listings refreshed, merch updated, copy revised — all handled.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◇</div>
+        <h3>Template Licensing</h3>
+        <p>StageHaus artist site templates are available for artists who want a polished, production-tested site fast. Built on Eleventy, deployable to GitHub Pages in under an hour.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+{# ── ARTIST TEMPLATE SCAFFOLD ──────────────────────────────── #}
+<section class="section" aria-labelledby="template-heading">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">StageHaus Templates</span>
+      <h2 id="template-heading">Ready-to-Deploy<br>Artist Site Templates</h2>
+      <p>Our template library gives artists a head start — professionally designed, technically sound, and fully customizable. Each template is purpose-built for music industry use cases.</p>
+    </div>
+
+    {#
+      ──────────────────────────────────────────────────────────────────
+      ARTIST TEMPLATE SCAFFOLD
+      ──────────────────────────────────────────────────────────────────
+      StageHaus maintains a library of reusable artist site templates
+      located in /src/artist-template/.
+
+      TEMPLATE STRUCTURE:
+        /src/artist-template/
+        ├── index.html        — Template preview / landing page
+        ├── style.css         — Standalone CSS for template
+        └── README.md         — Deployment and customization guide
+
+      DEPLOYMENT:
+        Templates deploy to GitHub Pages via the same GitHub Actions
+        workflow as the main StageHaus site. Each artist gets their own
+        repo forked from the template.
+
+      CUSTOMIZATION VARIABLES (set in _data/artist.json):
+        - artistName, artistGenre, artistBio
+        - heroImage, logoImage, socialLinks
+        - streamingLinks (Spotify, Apple Music, etc.)
+        - showDates (array of upcoming events)
+        - merchEnabled (boolean)
+
+      TO ADD A NEW TEMPLATE VARIANT:
+        1. Duplicate /src/artist-template/
+        2. Name it /src/artist-template-[style]/ (e.g. artist-template-dark)
+        3. Add to .eleventy.js passthrough copy list
+        4. Update this page with the new template card below
+      ──────────────────────────────────────────────────────────────────
+    #}
+
+    <div class="artist-template-grid">
+      <div class="artist-template-card">
+        <div class="artist-template-card__preview" aria-label="Template preview: Midnight — dark minimal artist site">
+          <div class="artist-template-card__preview-inner">
+            <div class="artist-template-card__mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-hero" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);">
+                <div class="mockup-text mockup-text--lg"></div>
+                <div class="mockup-text mockup-text--sm"></div>
+                <div class="mockup-btn"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="artist-template-card__body">
+          <h3>Midnight</h3>
+          <p>Dark, minimal. For artists with strong visual identity. Full-bleed imagery, editorial type, high contrast.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;">
+            <span class="badge">Dark Mode</span>
+            <span class="badge">EPK Ready</span>
+            <span class="badge">Merch Integrated</span>
+          </div>
+          <a href="/artist-template/" class="btn btn--outline btn--sm" style="margin-top:1rem;">View Template</a>
+        </div>
+      </div>
+
+      <div class="artist-template-card">
+        <div class="artist-template-card__preview" aria-label="Template preview: Daylight — warm editorial artist site">
+          <div class="artist-template-card__preview-inner">
+            <div class="artist-template-card__mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-hero" style="background: linear-gradient(135deg, #f0ebe1 0%, #e0d8c8 100%);">
+                <div class="mockup-text mockup-text--lg" style="background:#2a2520;"></div>
+                <div class="mockup-text mockup-text--sm" style="background:#7a7060;"></div>
+                <div class="mockup-btn" style="background:#c85d28;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="artist-template-card__body">
+          <h3>Daylight</h3>
+          <p>Warm, editorial. For acoustic, folk, and Americana artists. Cream palette, serif typography, storytelling-forward layout.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;">
+            <span class="badge">Light Mode</span>
+            <span class="badge">Newsletter</span>
+            <span class="badge">Show Listings</span>
+          </div>
+          <a href="/contact/" class="btn btn--outline btn--sm" style="margin-top:1rem;">Request This Template</a>
+        </div>
+      </div>
+
+      <div class="artist-template-card artist-template-card--coming-soon">
+        <div class="artist-template-card__preview" aria-label="Template coming soon">
+          <div class="artist-template-card__preview-inner">
+            <div class="artist-template-card__mockup">
+              <div class="mockup-bar"></div>
+              <div class="mockup-hero" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%);">
+                <div class="mockup-text mockup-text--lg" style="background:#6366f1;"></div>
+                <div class="mockup-text mockup-text--sm" style="background:#4b5563;"></div>
+                <div class="mockup-btn" style="background:#6366f1;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="artist-template-card__body">
+          <h3>Frequency <span class="badge" style="font-size:var(--fs-2xs);vertical-align:middle;">Coming Soon</span></h3>
+          <p>Electronic and club-forward. Animated backgrounds, playlist embeds, and a layout built for DJs and producers.</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem;">
+            <span class="badge">Dark Mode</span>
+            <span class="badge">Animated</span>
+            <span class="badge">DJ Optimized</span>
+          </div>
+          <a href="/contact/" class="btn btn--ghost btn--sm" style="margin-top:1rem;">Get Notified</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+{# ── PROCESS ───────────────────────────────────────────────── #}
+<section class="section section--dark" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="section-label">How We Build</span>
+      <h2 id="process-heading">From Brief to Live<br>in Four Phases</h2>
+    </div>
+    <div class="grid-auto">
+      {{ processStep("01", "Discovery &amp; Brief", "We start with a deep-dive into your brand, audience, and goals. What do fans need to do when they land on your site? Every design decision flows from the answer to that question.") }}
+      {{ processStep("02", "Design &amp; Review", "We produce high-fidelity mockups for key pages and present them for your feedback. Two rounds of revisions included — nothing moves to build until you love it.") }}
+      {{ processStep("03", "Build &amp; Integrate", "Our development team builds the site, connects your streaming platforms, email provider, merch store, and any third-party tools. Then we test across every device and browser.") }}
+      {{ processStep("04", "Launch &amp; Handoff", "We push the site live and give you a training walkthrough — how to update show dates, add merch, and manage content without touching code.") }}
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+{# ── TESTIMONIAL ───────────────────────────────────────────── #}
+<section class="section">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;">
+      {{ testimonialCard(
+        "I had a Squarespace site I was embarrassed to share. StageHaus built me a real site — it looks like a label site, loads fast, and my email list has tripled in four months because of the capture flow they built in. Best investment I've made in my career this year.",
+        "Jordan M.",
+        "R&B / Soul Recording Artist",
+        "JM"
+      ) }}
+    </div>
+  </div>
+</section>
+
+{# ── CTA ───────────────────────────────────────────────────── #}
+{% set ctaSectionLabel = "Start Your Build" %}
+{% set ctaHeading = "Ready for a Site Worth Sharing?" %}
+{% set ctaSubtext = "Tell us about your project. We'll recommend the right approach — custom build, template, or something in between." %}
+{% set ctaPrimaryLabel = "Start a Project" %}
+{% set ctaSecondaryLabel = "View the Template Library" %}
+{% set ctaSecondaryUrl = "/artist-template/" %}
+{% include "partials/cta-band.njk" %}

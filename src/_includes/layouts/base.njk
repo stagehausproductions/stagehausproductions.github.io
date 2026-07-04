@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ pageDescription or site.description }}" />
+  <title>{% if title and title != site.name %}{{ title }} — {{ site.name }}{% else %}{{ site.name }} — {{ site.tagline }}{% endif %}</title>
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="{{ site.name }}" />
+  <meta property="og:title"       content="{{ title or site.name }}" />
+  <meta property="og:description" content="{{ pageDescription or site.description }}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23C4A44A'/><text y='.85em' font-size='56' x='12' fill='%230f1015' font-family='Georgia,serif' font-weight='bold'>SH</text></svg>" />
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  {% block head %}{% endblock %}
+</head>
+<body class="{{ bodyClass or '' }}">
+
+  {% include "partials/header.njk" %}
+
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/assets/js/main.js" defer></script>
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>

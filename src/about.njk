@@ -1,0 +1,163 @@
+---
+layout: base.njk
+title: About StageHaus Productions
+pageDescription: StageHaus Productions is owned and operated by Shelby Williams — 10 years of production experience in Tulsa, Oklahoma and beyond.
+currentPage: about
+bodyClass: page-about
+---
+
+{% from "macros/components.njk" import pageHero, valueCard, statBar %}
+
+{{ pageHero(
+  "About StageHaus",
+  "Ten Years Backstage.<br>Now Working for You.",
+  "StageHaus Productions is a boutique, single-operator studio. One person with a decade of production experience and the technical skills to back it up.",
+  "About"
+) }}
+
+{# ── ORIGIN ── #}
+<section class="section">
+  <div class="container">
+    <div class="about-split">
+      <div>
+        <span class="section-label">The Story</span>
+        <h2>Built from the<br>Ground Up</h2>
+        <p>StageHaus Productions is owned and operated by Shelby Williams. There's no team, no partners, no staff roster — just one person with 10 years of hands-on production experience who decided it was time to do this properly.</p>
+        <p>Over the past decade, I've produced small to mid-sized shows primarily in Tulsa, Oklahoma, with a handful of productions in Dallas — including a show at Whiskey Garden. I've worked directly with artists, booked shows, coordinated vendors, managed logistics from load-in to settlement, and handled the hundred moving pieces that make a show actually happen the way it's supposed to.</p>
+        <p>I've booked artists including Dr. Jr and have built real working relationships in the Tulsa music community — including a close personal connection with Flint Wick. I know what artists need on show day because I've been in those conversations at soundcheck, in the green room, and at the merch table when things don't go to plan.</p>
+        <p>StageHaus is the structure I built around that experience. Boutique by choice, hands-on by design.</p>
+
+        <ul class="feature-list" style="margin-top: 2rem;">
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>10 years of production experience — small to mid-sized shows</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Tulsa, Oklahoma based — with Dallas market experience</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Real artist relationships — booking, logistics, and management</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Technical background in website development and merch systems</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Vendor coordination across multiple event types</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="about-split__cards">
+        <div class="card" style="grid-column: span 2;">
+          <span class="section-label">Why Boutique</span>
+          <blockquote style="font-family: var(--ff-display); font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.55; color: var(--clr-ivory); font-style: italic; margin-top: 0.5rem;">
+            "Staying small isn't a limitation — it's how I make sure nothing falls through the cracks. You get my full attention on every project."
+          </blockquote>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-family: var(--ff-display); font-size: 2.5rem; font-weight: bold; color: var(--clr-gold); line-height: 1;">10+</div>
+          <p style="font-size: var(--fs-sm); color: var(--clr-ivory); margin-top: 0.35rem; max-width: none;">Years in Production</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-family: var(--ff-display); font-size: 2.5rem; font-weight: bold; color: var(--clr-gold); line-height: 1;">TUL<br><span style="font-size: 1.5rem;">· DAL</span></div>
+          <p style="font-size: var(--fs-sm); color: var(--clr-ivory); margin-top: 0.35rem; max-width: none;">Markets Served</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+{# ── TIMELINE ── #}
+<section class="section section--dark" aria-labelledby="timeline-heading">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">The Journey</span>
+      <h2 id="timeline-heading">How We Got Here</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__year">Early</span>
+        </div>
+        <div class="timeline__content">
+          <div class="card">
+            <h3>First Shows in Tulsa</h3>
+            <p>Started producing small shows in the Tulsa music scene — learning load-in logistics, soundcheck coordination, and the operational side of live music from the ground up. No shortcuts, just repetition and attention to detail.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__year">Mid</span>
+        </div>
+        <div class="timeline__content">
+          <div class="card">
+            <h3>Vendor Coordination & Artist Relationships</h3>
+            <p>Expanded into vendor coordination across multiple event types, building relationships with local and regional vendors. Began working directly with artists — including booking Dr. Jr — and developed a close working relationship with Flint Wick.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__year">Dallas</span>
+        </div>
+        <div class="timeline__content">
+          <div class="card">
+            <h3>Beyond Tulsa — Dallas Productions</h3>
+            <p>Took production work into the Dallas market, including a show at Whiskey Garden. Expanded the operational playbook beyond Tulsa and proved the model could travel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline__item">
+        <div class="timeline__marker">
+          <span class="timeline__year">Now</span>
+        </div>
+        <div class="timeline__content">
+          <div class="card">
+            <h3>StageHaus Productions</h3>
+            <p>Formalized 10 years of experience into StageHaus Productions — a boutique studio offering artist management, booking strategy, show logistics, merch operations, and website development under one roof, operated by one person.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+{# ── VALUES ── #}
+<section class="section" aria-labelledby="values-heading">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">How I Operate</span>
+      <h2 id="values-heading">The StageHaus Way</h2>
+    </div>
+    <div class="grid-3">
+      {{ valueCard("◈", "Honest About Scope", "I won't take on a project I can't execute well. If something is outside what StageHaus does, I'll tell you upfront rather than overpromise and underdeliver.") }}
+      {{ valueCard("◉", "Present on Show Day", "I don't brief someone else and hope for the best. If I'm producing your show, I'm there — for load-in, soundcheck, the set, and settlement.") }}
+      {{ valueCard("◎", "Transparent on Money", "Rate cards, recoupment structures, and merch splits are all laid out clearly before we start. No vague invoices after the fact.") }}
+      {{ valueCard("◆", "Technical Depth", "Beyond logistics, I can build your website, set up your merch store, and architect digital systems — skills that most production people don't bring to the table.") }}
+      {{ valueCard("◇", "Artist-First Decisions", "Every call I make is filtered through one question: does this make sense for the artist? Not the easiest path, not the cheapest option — what's right for the project.") }}
+      {{ valueCard("⬡", "Boutique on Purpose", "Staying small means I can give every project real attention. I'm not scaling by adding headcount — I'm scaling by getting better at the work.") }}
+    </div>
+  </div>
+</section>
+
+{# ── CTA ── #}
+{% set ctaSectionLabel = "Work With StageHaus" %}
+{% set ctaHeading = "Let's Talk About<br>Your Project." %}
+{% set ctaSubtext = "Whether you need help with one show or want to build something longer-term — reach out and we'll figure out if it's a good fit." %}
+{% set ctaPrimaryLabel = "Get in Touch" %}
+{% set ctaSecondaryLabel = "View Services" %}
+{% set ctaSecondaryUrl = "/#services" %}
+{% include "partials/cta-band.njk" %}

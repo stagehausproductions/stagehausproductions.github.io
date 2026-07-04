@@ -1,0 +1,298 @@
+---
+layout: base.njk
+title: Contact StageHaus Productions
+pageDescription: Get in touch with StageHaus Productions. Whether you're an artist seeking management, a promoter with a booking inquiry, or a venue exploring production support — we want to hear from you.
+currentPage: contact
+bodyClass: page-contact
+---
+
+{% from "macros/components.njk" import pageHero %}
+
+{{ pageHero(
+  "Get in Touch",
+  "Let's Talk<br>About Your Goals.",
+  "Every great partnership starts with a conversation. Tell us where you are, where you want to go, and we'll tell you honestly whether we can help.",
+  "Home",
+  "/"
+) }}
+
+{# ── CONTACT LAYOUT ────────────────────────────────────────── #}
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      {# ── INFO COLUMN ─────────────────────────────────────── #}
+      <div class="contact-info">
+        <span class="section-label">Reach Us Directly</span>
+        <h2 style="margin-top:.5rem;">We're Real People.<br>We Answer.</h2>
+        <p style="margin-top:1rem;color:var(--clr-muted);">We don't have an intake bot or a ticketing system. When you contact StageHaus, a real person reads your message and responds within one business day.</p>
+
+        <div class="contact-info__items">
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">✉</div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">General Inquiries</div>
+              <a href="mailto:{{ site.email }}" class="contact-info__value">{{ site.email }}</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">♪</div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Artist Management</div>
+              <a href="mailto:{{ site.emailArtists }}" class="contact-info__value">{{ site.emailArtists }}</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">◈</div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Production &amp; Shows</div>
+              <a href="mailto:{{ site.emailProduction }}" class="contact-info__value">{{ site.emailProduction }}</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">☎</div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Office Phone</div>
+              <a href="tel:+19185550190" class="contact-info__value">{{ site.phone }}</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__icon" aria-hidden="true">◉</div>
+            <div class="contact-info__body">
+              <div class="contact-info__label">Headquarters</div>
+              <span class="contact-info__value">{{ site.location }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-social" style="margin-top:2rem;">
+          <span class="section-label" style="display:block;margin-bottom:1rem;">Follow Along</span>
+          <div style="display:flex;gap:1rem;">
+            <a href="{{ site.social.instagram }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer" aria-label="StageHaus on Instagram">Instagram</a>
+            <a href="{{ site.social.twitter }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer" aria-label="StageHaus on X (Twitter)">X / Twitter</a>
+            <a href="{{ site.social.linkedin }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener noreferrer" aria-label="StageHaus on LinkedIn">LinkedIn</a>
+          </div>
+        </div>
+
+        {# ── FAQ ──────────────────────────────────────────── #}
+        <div class="contact-faq" style="margin-top:3rem;">
+          <span class="section-label" style="display:block;margin-bottom:1.25rem;">Common Questions</span>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">Do you work with artists outside of Tulsa?</summary>
+            <div class="faq-item__answer">
+              <p>Absolutely. StageHaus operates in 40+ cities across North America. Our team travels, and many of our remote services — management, booking strategy, website development, merch operations — are location-independent.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">What genres do you work with?</summary>
+            <div class="faq-item__answer">
+              <p>We're genre-agnostic when it comes to production and logistics. For artist management, we work across Americana, indie rock, R&amp;B, electronic, folk, and adjacent spaces. If your music has a live audience, we likely have relevant experience.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">How do management fees work?</summary>
+            <div class="faq-item__answer">
+              <p>Management fees are a percentage of gross income, ranging by tier. We're fully transparent about our fee structure in the first call — no surprises, no hidden deductions. All financials are provided in monthly statements.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">How quickly can you get a website live?</summary>
+            <div class="faq-item__answer">
+              <p>Template-based sites can go live in 3–5 business days with your content ready. Custom builds typically take 3–6 weeks depending on complexity and revision cycles. We'll give you a concrete timeline in your project brief.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__question">Do you offer one-off production support?</summary>
+            <div class="faq-item__answer">
+              <p>Yes. While our best results come from ongoing relationships, we do provide production support for individual events — particularly larger headlining shows, festivals, and special events. Reach out with your date and venue and we'll let you know our availability.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      {# ── FORM ────────────────────────────────────────────── #}
+      <div class="contact-form-wrap">
+        <div class="card" style="padding:2.5rem;">
+          <h3 style="margin-bottom:.25rem;">Send Us a Message</h3>
+          <p style="color:var(--clr-muted);font-size:var(--fs-sm);margin-bottom:1.75rem;">We respond to every inquiry within one business day.</p>
+
+          <form
+            id="contact-form"
+            class="form"
+            method="POST"
+            action="#"
+            novalidate
+            aria-label="Contact form"
+          >
+            {# Name Row #}
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="first-name">First Name <span aria-hidden="true" style="color:var(--clr-rust);">*</span></label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="first-name"
+                  name="firstName"
+                  autocomplete="given-name"
+                  required
+                  placeholder="First name"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="last-name">Last Name <span aria-hidden="true" style="color:var(--clr-rust);">*</span></label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="last-name"
+                  name="lastName"
+                  autocomplete="family-name"
+                  required
+                  placeholder="Last name"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+
+            {# Email + Phone Row #}
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="email">Email Address <span aria-hidden="true" style="color:var(--clr-rust);">*</span></label>
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  placeholder="your@email.com"
+                  aria-required="true"
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="phone">Phone Number</label>
+                <input
+                  class="form__input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="(optional)"
+                />
+              </div>
+            </div>
+
+            {# Artist Name #}
+            <div class="form__group">
+              <label class="form__label" for="artist-name">Artist / Band Name</label>
+              <input
+                class="form__input"
+                type="text"
+                id="artist-name"
+                name="artistName"
+                placeholder="Your artist or project name"
+              />
+            </div>
+
+            {# Inquiry Type #}
+            <div class="form__group">
+              <label class="form__label" for="inquiry-type">What can we help you with? <span aria-hidden="true" style="color:var(--clr-rust);">*</span></label>
+              <select class="form__select" id="inquiry-type" name="inquiryType" required aria-required="true">
+                <option value="" disabled selected>Select an inquiry type…</option>
+                <option value="artist-management">Artist Management</option>
+                <option value="booking-strategy">Booking Strategy</option>
+                <option value="show-logistics">Show Logistics / Production</option>
+                <option value="merch-operations">Merch Operations</option>
+                <option value="website-development">Website Development</option>
+                <option value="event-production">Event Production (Upcoming)</option>
+                <option value="general">General Inquiry</option>
+                <option value="press">Press / Media</option>
+              </select>
+            </div>
+
+            {# Services Checkboxes #}
+            <div class="form__group">
+              <span class="form__label" id="services-legend">Other services you're interested in</span>
+              <div class="form__checkboxes" role="group" aria-labelledby="services-legend">
+                <label class="form__checkbox">
+                  <input type="checkbox" name="services" value="artist-management" />
+                  <span>Artist Management</span>
+                </label>
+                <label class="form__checkbox">
+                  <input type="checkbox" name="services" value="booking" />
+                  <span>Booking Strategy</span>
+                </label>
+                <label class="form__checkbox">
+                  <input type="checkbox" name="services" value="production" />
+                  <span>Show Logistics</span>
+                </label>
+                <label class="form__checkbox">
+                  <input type="checkbox" name="services" value="merch" />
+                  <span>Merch Operations</span>
+                </label>
+                <label class="form__checkbox">
+                  <input type="checkbox" name="services" value="website" />
+                  <span>Website Development</span>
+                </label>
+                <label class="form__checkbox">
+                  <input type="checkbox" name="services" value="creative" />
+                  <span>Creative Direction</span>
+                </label>
+              </div>
+            </div>
+
+            {# Message #}
+            <div class="form__group">
+              <label class="form__label" for="message">Tell us about your project <span aria-hidden="true" style="color:var(--clr-rust);">*</span></label>
+              <textarea
+                class="form__textarea"
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Where are you in your career? What are you working on? What do you need help with? The more detail, the better we can prepare for our first conversation."
+                aria-required="true"
+              ></textarea>
+            </div>
+
+            {# How did you hear about us #}
+            <div class="form__group">
+              <label class="form__label" for="referral">How did you hear about StageHaus?</label>
+              <select class="form__select" id="referral" name="referral">
+                <option value="" disabled selected>Select one…</option>
+                <option value="referral">Artist or industry referral</option>
+                <option value="search">Search engine</option>
+                <option value="social">Social media</option>
+                <option value="festival">Festival / event</option>
+                <option value="press">Press or publication</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            {# Privacy checkbox #}
+            <div class="form__group">
+              <label class="form__checkbox">
+                <input type="checkbox" name="privacy" id="privacy" required aria-required="true" />
+                <span>I agree that StageHaus may store and use this information to respond to my inquiry. We do not sell or share your data.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;" id="contact-submit">
+              Send Message
+            </button>
+
+            <p class="form__note" style="margin-top:1rem;font-size:var(--fs-sm);color:var(--clr-muted);text-align:center;">
+              We respond within one business day. For urgent production matters, call us directly.
+            </p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

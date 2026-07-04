@@ -1,0 +1,129 @@
+---
+layout: base.njk
+title: Booking Strategy — StageHaus Productions
+pageDescription: Real booking strategy from StageHaus Productions — promoter communication, contract management, show routing, and negotiation backed by 10 years of production experience.
+currentPage: booking-strategy
+bodyClass: page-booking-strategy
+tags: phase1
+---
+
+{% from "macros/components.njk" import pageHero, processStep %}
+
+{{ pageHero(
+  "Booking Strategy",
+  "Getting You in<br>the Right Rooms.",
+  "Booking is more than sending emails. It's knowing who to contact, how to pitch, what to ask for, and when to walk away from a bad deal.",
+  "Booking Strategy"
+) }}
+
+<section class="section">
+  <div class="container">
+    <div class="about-split">
+      <div>
+        <span class="section-label">The Approach</span>
+        <h2>Booking Built on<br>Real Experience</h2>
+        <p>I've been on both sides of the booking conversation — as a producer working with venues and promoters, and as someone advocating for artists in those negotiations. That context matters. I know what promoters actually care about, what's a hard no, and where there's room to push.</p>
+        <p>StageHaus booking strategy is grounded in the Tulsa and Dallas markets, with growing connections beyond. It's not a database of cold emails — it's real relationships with people who answer the phone.</p>
+
+        <ul class="feature-list" style="margin-top: 2rem;">
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Promoter outreach — targeted, not spray-and-pray</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Contract review and negotiation support</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Show routing — geographic logic, not random date filling</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Deal structure advice — guarantees, door splits, ticket holds</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Honest assessment of venue and market fit</span>
+          </li>
+          <li class="feature-list__item">
+            <span class="feature-list__check" aria-hidden="true">✓</span>
+            <span>Follow-through on every inquiry — no leads left hanging</span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div class="card">
+          <div class="card__icon" aria-hidden="true">📞</div>
+          <h4>Promoter Communication</h4>
+          <p>Getting a response from a promoter isn't about sending the right template — it's about the right pitch to the right person at the right time. I handle that communication directly, with context from actual booking experience.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon" aria-hidden="true">📝</div>
+          <h4>Contract Management</h4>
+          <p>Show contracts have a lot of language that favors the venue when left unchallenged. I review offers, flag issues, and help you understand what you're actually agreeing to before you sign.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon" aria-hidden="true">🗺️</div>
+          <h4>Routing Strategy</h4>
+          <p>A tour isn't just a list of dates — it's a sequence that makes geographic and financial sense. I help build routing that minimizes dead miles and builds momentum market by market.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section section--dark" aria-labelledby="markets-heading">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Where I Operate</span>
+      <h2 id="markets-heading">Current Market Experience</h2>
+      <p>Honest about where the relationships are strongest — and transparent about where StageHaus is still building.</p>
+    </div>
+    <div class="grid-3">
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◈</div>
+        <h3>Tulsa, Oklahoma</h3>
+        <p>Primary market. 10 years of working relationships with venues, promoters, and the local production community. This is where the depth is.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◉</div>
+        <h3>Dallas, Texas</h3>
+        <p>Secondary market with real production experience, including a show at Whiskey Garden. Solid starting point for regional expansion south.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-card__icon" aria-hidden="true">◎</div>
+        <h3>Regional & Beyond</h3>
+        <p>Growing network beyond Oklahoma and Texas. If you're looking to push into new markets, we'll be honest about what we know well and what we're still figuring out together.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">The Process</span>
+      <h2 id="process-heading">From Strategy to Confirmed Dates</h2>
+    </div>
+    <div class="grid-auto">
+      {{ processStep("01", "Assess Where You Are", "Before any outreach happens, I need to understand your draw, your materials, and what you're realistically ready to ask for. That honesty sets everything else up correctly.") }}
+      {{ processStep("02", "Identify the Right Targets", "Not every venue is the right venue. Not every promoter is worth pursuing. I identify targets based on fit — audience alignment, room size, market, and timing.") }}
+      {{ processStep("03", "Outreach & Negotiation", "Pitches go out, responses come in, deals get negotiated. I handle the back-and-forth and keep you informed without burying you in every email thread.") }}
+      {{ processStep("04", "Confirm & Hand Off to Logistics", "Once a date is confirmed and the contract is signed, the information hands off cleanly to show logistics — so nothing gets lost between booking and show day.") }}
+    </div>
+  </div>
+</section>
+
+{% set ctaSectionLabel = "Booking Strategy" %}
+{% set ctaHeading = "Let's Get You<br>in Better Rooms." %}
+{% set ctaSubtext = "Tell me where you're playing now and where you want to be. We'll talk honestly about what the path looks like." %}
+{% set ctaPrimaryLabel = "Talk Booking Strategy" %}
+{% set ctaSecondaryLabel = "View All Services" %}
+{% set ctaSecondaryUrl = "/#services" %}
+{% include "partials/cta-band.njk" %}

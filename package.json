@@ -1,0 +1,18 @@
+{
+  "name": "stagehaus-productions",
+  "version": "1.0.0",
+  "description": "StageHaus Productions — full-service artist production & management website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve --watch",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
