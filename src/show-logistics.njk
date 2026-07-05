@@ -1,82 +1,48 @@
 ---
 layout: base.njk
 title: Show Logistics — StageHaus Productions
-pageDescription: Show logistics from StageHaus Productions — load-in coordination, soundcheck, hospitality, travel, and backstage operations for small to mid-sized shows.
+pageDescription: StageHaus handles every operational detail of your show — advance calls, load-in, hospitality, and settlement — so you can focus on performing.
 currentPage: show-logistics
 bodyClass: page-show-logistics
-tags: phase1
 ---
 
-{% from "macros/components.njk" import pageHero, processStep %}
+{# ── PAGE HERO ── #}
+<section class="page-hero">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="page-hero__content">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/" class="breadcrumb__link">Home</a>
+      <span class="breadcrumb__sep" aria-hidden="true">/</span>
+      <a href="/#services" class="breadcrumb__link">Services</a>
+      <span class="breadcrumb__sep" aria-hidden="true">/</span>
+      <span aria-current="page">Show Logistics</span>
+    </nav>
+    <span class="section-label">Service 03</span>
+    <h1 class="page-hero__title">Show Logistics</h1>
+    <p class="page-hero__sub">From the advance call to the final settlement — every operational detail handled so the only thing you have to think about is the performance.</p>
+  </div>
+</section>
 
-{{ pageHero(
-  "Show Logistics",
-  "The Show Runs<br>Because Someone Made It.",
-  "10 years of load-ins, soundchecks, hospitality builds, and backstage operations. The logistics side of a show is where things fall apart — or don't.",
-  "Show Logistics"
-) }}
-
+{# ── INTRO ── #}
 <section class="section">
   <div class="container">
     <div class="about-split">
       <div>
-        <span class="section-label">What I Handle</span>
-        <h2>Every Moving Part,<br>Accounted For</h2>
-        <p>Show logistics is the work that happens before the artist walks on stage. It's the advance calls, the load-in coordination, the soundcheck that actually starts on time, the hospitality setup, the travel that doesn't put everyone in a bad headspace before the set. It's the things that look invisible when they go right and catastrophic when they don't.</p>
-        <p>I've been doing this work in Tulsa for a decade — small rooms, mid-sized venues, festival stages — and I've developed a methodical approach that keeps show day calm even when the variables aren't cooperating.</p>
-
-        <ul class="feature-list" style="margin-top: 2rem;">
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Load-in coordination — timeline, crew, gear, order of operations</span>
-          </li>
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Soundcheck scheduling and technical communication with venue</span>
-          </li>
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Hospitality coordination — rider fulfillment, green room setup</span>
-          </li>
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Travel coordination — routing, lodging, logistics between dates</span>
-          </li>
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Backstage operations — access, flow, guest list, timing</span>
-          </li>
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Vendor coordination on-site when needed</span>
-          </li>
-          <li class="feature-list__item">
-            <span class="feature-list__check" aria-hidden="true">✓</span>
-            <span>Post-show settlement and reconciliation</span>
-          </li>
-        </ul>
+        <span class="section-label">What It Is</span>
+        <h2>The Work That Happens<br>Before You Hit the Stage.</h2>
+        <p>A great show doesn't start at soundcheck. It starts weeks before — in the advance call with the venue, in the hospitality conversation with the promoter, in the travel coordination that gets you there on time and not exhausted. Most show-day problems are advance problems that didn't get caught.</p>
+        <p>StageHaus show logistics means every detail is locked before you arrive. Load-in time, backline confirmation, hospitality setup, settlement terms — all verified and documented. You arrive knowing exactly what to expect.</p>
+        <a href="/contact/" class="btn btn--primary" style="margin-top: var(--s8);">Book a Show Day</a>
       </div>
-
-      <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-        <div class="card">
-          <div class="card__icon" aria-hidden="true">🚪</div>
-          <h4>Load-In Coordination</h4>
-          <p>Load-in sets the tone for the whole day. A disorganized load-in means a rushed soundcheck, a stressed artist, and a show that starts behind. I build the timeline, communicate it to everyone involved, and hold it.</p>
+      <div class="flex-col" style="gap: var(--s4);">
+        <div class="card" style="border-color: var(--electric-rim); background: var(--electric-dim);">
+          <span class="section-label">Per Show or Ongoing</span>
+          <h3 style="font-size: var(--fs-xl); margin-top: var(--s3); margin-bottom: var(--s3);">Flexible Engagement</h3>
+          <p style="font-size: var(--fs-sm);">Logistics support is available per-show, per-run, or as an ongoing component of a management engagement. No minimum commitment required to get started.</p>
         </div>
         <div class="card">
-          <div class="card__icon" aria-hidden="true">🎛️</div>
-          <h4>Soundcheck & Technical</h4>
-          <p>Advance communication with the house sound engineer, stage manager, and any support acts. Soundcheck runs in the right order, at the right time, without everyone standing around waiting for information that should have been sent three days ago.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon" aria-hidden="true">🏡</div>
-          <h4>Hospitality & Backstage</h4>
-          <p>Rider fulfillment, green room setup, guest list management, and keeping the backstage environment functional. Artists perform better when the basic stuff isn't a problem — that's the job.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon" aria-hidden="true">🚗</div>
-          <h4>Travel Coordination</h4>
-          <p>For multi-date runs or out-of-market shows, travel logistics get coordinated in advance — routing, accommodation, drive times, and load-in windows aligned so no one's showing up exhausted and running late.</p>
+          <h4 style="margin-bottom: var(--s3); font-size: var(--fs-lg);">What Makes It Different</h4>
+          <p style="font-size: var(--fs-sm); max-width: none;">Every detail confirmed in writing. Every problem caught before show day. A logistics operator who has been on enough floors to know where things fall apart — and how to prevent it.</p>
         </div>
       </div>
     </div>
@@ -85,26 +51,72 @@ tags: phase1
 
 <div class="divider"></div>
 
-<section class="section section--dark" aria-labelledby="process-heading">
+{# ── TIMELINE ── #}
+<section class="section section--dark">
   <div class="container">
     <div class="section-header section-header--center">
-      <span class="section-label">Show Day Breakdown</span>
-      <h2 id="process-heading">How a Show Day Actually Runs</h2>
+      <span class="section-label">The Timeline</span>
+      <h2>What Happens and When</h2>
+      <p>Show logistics is a timeline, not a checklist. Here's what gets done and when.</p>
     </div>
-    <div class="grid-auto">
-      {{ processStep("Advance", "Pre-Show Advance Work", "Days before the show: venue advance call, technical rider sent and confirmed, hospitality rider submitted, load-in time locked, travel arranged, guest list compiled.") }}
-      {{ processStep("Load-In", "Load-In & Setup", "Arrive at load-in. Coordinate gear movement, crew assignments, and stage setup. Keep the timeline. Communicate changes in real time.") }}
-      {{ processStep("Check", "Soundcheck", "Soundcheck runs in the correct order with the correct information already at the venue. The artist gets the time they need without fighting for it.") }}
-      {{ processStep("Show", "Show Day Operations", "Backstage access, guest list, hospitality, artist needs, venue relationship — all managed so the artist can focus entirely on the performance.") }}
-      {{ processStep("Settlement", "Post-Show Settlement", "Door count, splits, expenses, and any outstanding items settled on-site before anyone leaves. Clean numbers, no follow-up chasing.") }}
+
+    <div class="steps-list" style="margin-top: var(--s12);">
+
+      <div class="process-step">
+        <div class="process-step__num">01</div>
+        <div>
+          <span class="process-step__time">2–3 Weeks Out</span>
+          <h3 class="process-step__title">Advance Call</h3>
+          <p class="process-step__desc">Direct call or email chain with the venue or promoter. Load-in time, stage plot confirmation, backline, hospitality, parking, and settlement structure — all confirmed and documented.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">02</div>
+        <div>
+          <span class="process-step__time">1 Week Out</span>
+          <h3 class="process-step__title">Final Confirmation</h3>
+          <p class="process-step__desc">Follow-up to confirm nothing has changed — load-in time, venue contact, any new logistics. Travel booked, route confirmed, everyone knows where they need to be.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">03</div>
+        <div>
+          <span class="process-step__time">Day Of — Morning</span>
+          <h3 class="process-step__title">Load-In & Setup</h3>
+          <p class="process-step__desc">On-site coordination with venue staff, backline, and production team. Stage plot executed. Hospitality confirmed. Soundcheck scheduled and protected.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">04</div>
+        <div>
+          <span class="process-step__time">Day Of — Show</span>
+          <h3 class="process-step__title">Show Day Operations</h3>
+          <p class="process-step__desc">Backstage management, hospitality oversight, production communication, timeline management. The floor is covered so the artist is focused.</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="process-step__num">05</div>
+        <div>
+          <span class="process-step__time">End of Night</span>
+          <h3 class="process-step__title">Settlement</h3>
+          <p class="process-step__desc">Settlement reviewed and verified against the deal terms. Door counts, bar splits, merch percentages — all checked before anyone walks out. Discrepancies addressed on site.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-{% set ctaSectionLabel = "Show Logistics" %}
-{% set ctaHeading = "Let's Make Sure<br>Your Show Goes Right." %}
-{% set ctaSubtext = "Whether it's one show or a run of dates — reach out and let's talk about what you need covered." %}
-{% set ctaPrimaryLabel = "Talk Logistics" %}
-{% set ctaSecondaryLabel = "View All Services" %}
+
+{# ── CTA ── #}
+{% set ctaSectionLabel = "Get Covered" %}
+{% set ctaHeading = "Let Someone Else<br>Handle Show Day." %}
+{% set ctaSubtext = "Tell us the date, the deal, and the venue. We'll handle everything from advance to settlement." %}
+{% set ctaPrimaryLabel = "Get in Touch" %}
+{% set ctaSecondaryLabel = "All Services" %}
 {% set ctaSecondaryUrl = "/#services" %}
 {% include "partials/cta-band.njk" %}

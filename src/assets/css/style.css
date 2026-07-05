@@ -1920,3 +1920,346 @@ main a:not([class]):hover {
     border-top: 1px solid var(--border);
   }
 }
+
+
+/* ── INNER PAGE HERO — container alignment fix ── */
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  width: min(var(--max-w), 100% - 3rem);
+  margin-inline: auto;
+}
+
+
+
+/* ============================================================
+   DROPDOWN REDESIGN
+   ============================================================ */
+.header__dropdown {
+  width: 720px;
+  padding: 0;
+}
+
+/* New inner — vertical flex, grid on top, strips below */
+.header__dropdown-inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+}
+
+/* Active services grid — 3 columns */
+.header__dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s1);
+  padding: var(--s5) var(--s5) var(--s4);
+}
+
+/* Individual service item */
+.header__dropdown-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+  padding: var(--s4);
+  border-radius: var(--r);
+  border: 1px solid transparent;
+  transition:
+    background var(--t) var(--ease),
+    border-color var(--t) var(--ease);
+  text-decoration: none;
+  color: var(--ivory);
+}
+.header__dropdown-item:hover {
+  background: var(--electric-dim);
+  border-color: var(--electric-rim);
+}
+.header__dropdown-item.is-active {
+  background: var(--electric-dim);
+  border-color: var(--electric-rim);
+}
+
+/* Icon box */
+.header__dropdown-item__icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--electric-lt);
+  margin-top: 1px;
+  transition: border-color var(--t) var(--ease), background var(--t) var(--ease);
+}
+.header__dropdown-item:hover .header__dropdown-item__icon {
+  border-color: var(--electric-dk);
+  background: rgba(139,92,246,.08);
+}
+.header__dropdown-item__icon svg {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Text */
+.header__dropdown-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.header__dropdown-item__title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  color: var(--ivory);
+  line-height: 1.2;
+}
+.header__dropdown-item__sub {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  line-height: 1.45;
+  max-width: 18ch;
+}
+
+/* Coming soon strip */
+.header__dropdown-soon {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  padding: var(--s4) var(--s5);
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.012);
+}
+.header__dropdown-soon-label {
+  font-family: var(--ff-label);
+  font-size: var(--fs-2xs);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--dim);
+  flex-shrink: 0;
+  margin-right: var(--s2);
+  max-width: none;
+}
+.header__dropdown-soon-item {
+  font-size: var(--fs-xs);
+  color: var(--dim);
+  padding: 3px var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  text-decoration: none;
+  transition: color var(--t) var(--ease), border-color var(--t) var(--ease);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: .7;
+}
+
+/* Footer CTA strip */
+.header__dropdown-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s4) var(--s5);
+  border-top: 1px solid var(--border);
+}
+.header__dropdown-footer p {
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  max-width: none;
+  margin: 0;
+}
+.header__dropdown-footer a {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--electric-lt);
+  white-space: nowrap;
+  transition: color var(--t) var(--ease);
+  flex-shrink: 0;
+}
+.header__dropdown-footer a:hover { color: var(--electric); }
+
+
+
+
+/* ── Form error state ── */
+.form__input.is-error,
+.form__select.is-error,
+.form__textarea.is-error {
+  border-color: var(--error);
+  box-shadow: 0 0 0 3px rgba(138,48,48,.15);
+}
+
+/* ── Dropdown trigger active (JS-set when child page is active) ── */
+.header__dropdown-trigger.is-active {
+  color: var(--ivory);
+  background: var(--bg-hover);
+}
+.header__dropdown-trigger.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 2px;
+  background: var(--electric);
+  border-radius: 2px;
+}
+
+
+
+
+/* ============================================================
+   STEPS LIST — vertical process component
+   Replaces grid-auto for 5-step sections. No orphan possible.
+   ============================================================ */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  max-width: 900px;
+  margin-inline: auto;
+  position: relative;
+}
+
+/* Connecting line between steps */
+.steps-list::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 44px;
+  bottom: 44px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--electric-rim) 10%,
+    var(--border) 80%,
+    transparent
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.steps-list .process-step {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-card);
+}
+
+/* ============================================================
+   GRID ORPHAN FIX — .grid-3 with 4 or 7 items (lone last card)
+   ============================================================ */
+
+/* 1 item alone on last row (4th, 7th, etc.) */
+.grid-3 > *:last-child:nth-child(3n + 1) {
+  grid-column: 2 / 3;
+}
+
+
+
+
+
+/* ── Time badge — for show-logistics timeline labels ── */
+.process-step__time {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--s3);
+  background: var(--electric-dim);
+  border: 1px solid var(--electric-rim);
+  border-radius: var(--r-full);
+  font-family: var(--ff-label);
+  font-size: var(--fs-2xs);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--electric-lt);
+  margin-bottom: var(--s2);
+  width: fit-content;
+}
+
+
+/* ── Festival cards — consistent icon → title → body rhythm ── */
+.card--lift {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+.card--lift .card__icon { margin-bottom: var(--s1); }
+.card--lift h3          { margin: 0; line-height: 1.2; }
+.card--lift p           { margin: 0; }
+
+
+
+/* ============================================================
+   LOGO MARK + WORDMARK
+   ============================================================ */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__logo-mark-svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  overflow: visible; /* lets glow bleed outside the viewBox */
+}
+
+.header__logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.header__logo-name {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--ivory);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.header__logo-prod {
+  font-family: var(--ff-label);
+  font-size: 0.52rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ── Bulb glow — drop-shadow on the <g class="logo-bulb"> group ── */
+.logo-bulb {
+  animation: logoBulbPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes logoBulbPulse {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 2px rgba(216, 204, 255, 0.95))
+      drop-shadow(0 0 5px rgba(139,  92, 246, 0.65));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 4px rgba(237, 233, 254, 1))
+      drop-shadow(0 0 9px rgba(196, 181, 253, 0.9))
+      drop-shadow(0 0 16px rgba(139,  92, 246, 0.45));
+  }
+}
+
+/* ── Footer logo sizing overrides ── */
+.footer__logo .header__logo-mark-svg { width: 28px; height: 28px; }
+.footer__logo .header__logo-name     { font-size: 1.1rem; }
+.footer__logo .header__logo-prod     { display: none; }

@@ -1,168 +1,189 @@
 /* ============================================================
-   STAGEHAUS PRODUCTIONS — Main JavaScript
+   STAGEHAUS — main.js
+   Header scroll, dropdown, mobile menu, FAQ, reveal
    ============================================================ */
-'use strict';
 
-/* ── Header scroll state ── */
-(function initHeader() {
-  const header    = document.getElementById('site-header');
-  const hamburger = document.querySelector('.header__hamburger');
-  const mobileMenu= document.getElementById('mobile-menu');
-  const overlay   = document.getElementById('mobile-overlay');
-  const closeBtn  = document.querySelector('.mobile-menu__close');
-  if (!header) return;
+(function () {
+  'use strict';
 
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 24);
-  }, { passive: true });
-  header.classList.toggle('is-scrolled', window.scrollY > 24);
+  /* ── Utility ── */
+  const qs  = (sel, ctx = document) => ctx.querySelector(sel);
+  const qsa = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
-  function openMenu() {
-    mobileMenu.classList.add('is-open');
-    overlay.classList.add('is-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    mobileMenu.setAttribute('aria-hidden', 'false');
+  /* ============================================================
+     1. HEADER — scroll state
+     ============================================================ */
+  const header = qs('#site-header');
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 20);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  /* ============================================================
+     2. SERVICES DROPDOWN
+     ============================================================ */
+  const dropdownTriggers = qsa('.header__dropdown-trigger');
+
+  dropdownTriggers.forEach(trigger => {
+    const navItem  = trigger.closest('.header__nav-item--dropdown');
+    const dropdown = navItem ? qs('.header__dropdown', navItem) : null;
+    if (!navItem || !dropdown) return;
+
+    /* Toggle on click */
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      closeAllDropdowns();
+      if (!isOpen) openDropdown(trigger, dropdown);
+    });
+
+    /* Keyboard support */
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAllDropdowns();
+    });
+
+    dropdown.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllDropdowns();
+        trigger.focus();
+      }
+    });
+  });
+
+  /* Close when clicking outside */
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.header__nav-item--dropdown')) {
+      closeAllDropdowns();
+    }
+  });
+
+  /* Close on Escape anywhere */
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllDropdowns();
+  });
+
+  function openDropdown(trigger, dropdown) {
+    trigger.setAttribute('aria-expanded', 'true');
+    dropdown.removeAttribute('hidden');
+  }
+
+  function closeAllDropdowns() {
+    dropdownTriggers.forEach(t => {
+      t.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* ============================================================
+     3. MOBILE MENU
+     ============================================================ */
+  const hamburger = qs('.header__hamburger');
+  const mobileMenu = qs('#mobile-menu');
+  const mobileOverlay = qs('#mobile-overlay');
+  const mobileClose = qs('.mobile-menu__close');
+
+  function openMobileMenu() {
+    mobileMenu?.classList.add('is-open');
+    mobileOverlay?.classList.add('is-open');
+    mobileMenu?.removeAttribute('aria-hidden');
+    hamburger?.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
-  function closeMenu() {
-    mobileMenu.classList.remove('is-open');
-    overlay.classList.remove('is-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.setAttribute('aria-hidden', 'true');
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.remove('is-open');
+    mobileOverlay?.classList.remove('is-open');
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+    hamburger?.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
 
-  hamburger?.addEventListener('click', openMenu);
-  closeBtn?.addEventListener('click', closeMenu);
-  overlay?.addEventListener('click', closeMenu);
-  mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  hamburger?.addEventListener('click', openMobileMenu);
+  mobileClose?.addEventListener('click', closeMobileMenu);
+  mobileOverlay?.addEventListener('click', closeMobileMenu);
 
-  /* Dropdown keyboard support */
-  const trigger  = document.querySelector('.header__dropdown-trigger');
-  const dropdown = document.getElementById('services-dropdown');
-  if (trigger && dropdown) {
-    trigger.addEventListener('click', () => {
-      const open = trigger.getAttribute('aria-expanded') === 'true';
-      trigger.setAttribute('aria-expanded', String(!open));
-    });
-    document.addEventListener('click', e => {
-      if (!trigger.closest('li').contains(e.target)) {
-        trigger.setAttribute('aria-expanded', 'false');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  /* ============================================================
+     4. SCROLL REVEAL
+     ============================================================ */
+  const revealEls = qsa('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('is-visible'));
+  }
+
+  /* ============================================================
+     5. FAQ — smooth open/close
+     ============================================================ */
+  qsa('.faq-item').forEach(item => {
+    item.addEventListener('toggle', () => {
+      /* Close other open FAQs in the same container */
+      const siblings = qsa('.faq-item', item.parentElement);
+      if (item.open) {
+        siblings.forEach(s => { if (s !== item) s.open = false; });
       }
     });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  /* ============================================================
+     6. CONTACT FORM — basic client-side validation feedback
+     ============================================================ */
+  const contactForm = qs('[data-form="contact"]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const required = qsa('[required]', contactForm);
+      let valid = true;
+
+      required.forEach(field => {
+        field.classList.remove('is-error');
+        if (!field.value.trim()) {
+          field.classList.add('is-error');
+          valid = false;
+        }
+      });
+
+      if (valid) {
+        const btn = qs('[type="submit"]', contactForm);
+        if (btn) {
+          btn.textContent = 'Message Sent ✓';
+          btn.disabled = true;
+          btn.style.background = 'var(--electric)';
+          btn.style.borderColor = 'var(--electric)';
+          btn.style.color = '#fff';
+        }
+      }
     });
   }
 
-  /* Active link highlight */
-  const path = window.location.pathname;
-  document.querySelectorAll('.header__nav-link, .header__dropdown-link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-    if (path === href || (href !== '/' && path.startsWith(href))) {
+  /* ============================================================
+     7. ACTIVE NAV — mark current page link
+     ============================================================ */
+  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  qsa('.header__nav-link, .header__dropdown-item').forEach(link => {
+    const href = (link.getAttribute('href') || '').replace(/\/$/, '');
+    if (href && href === currentPath) {
       link.classList.add('is-active');
-    }
-  });
-})();
-
-/* ── Scroll reveal ── */
-(function initReveal() {
-  const els = document.querySelectorAll(
-    '.svc-card, .card, .value-card, .process-step, .testimonial, .team-card, [data-reveal]'
-  );
-  if (!els.length || !('IntersectionObserver' in window)) return;
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el  = entry.target;
-        const idx = Array.from(el.parentElement?.children || []).indexOf(el);
-        const delay = Math.min(idx * 60, 360);
-        setTimeout(() => {
-          el.style.opacity   = '1';
-          el.style.transform = 'translateY(0)';
-        }, delay);
-        io.unobserve(el);
+      if (link.classList.contains('header__dropdown-item')) {
+        /* Mark the Services trigger as active too */
+        const trigger = qs('.header__dropdown-trigger');
+        if (trigger) trigger.classList.add('is-active');
       }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-  els.forEach(el => {
-    el.style.opacity   = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.52s ease, transform 0.52s ease';
-    io.observe(el);
-  });
-})();
-
-/* ── Contact / booking form ── */
-(function initForms() {
-  document.querySelectorAll('form[data-form]').forEach(form => {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn  = form.querySelector('[type="submit"]');
-      const orig = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = 'Sending…';
-
-      /* ── Wire up your form service here ──────────────────────
-         Options:
-         • Formspree:  fetch('https://formspree.io/f/YOUR_ID', { method:'POST', body: new FormData(form) })
-         • Netlify:    add netlify attribute to <form>
-         • EmailJS:    emailjs.sendForm('SERVICE', 'TEMPLATE', form)
-         ─────────────────────────────────────────────────────── */
-      setTimeout(() => {
-        btn.innerHTML = '✓ Message Sent!';
-        btn.style.background = 'var(--clr-success)';
-        btn.style.color = '#fff';
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.innerHTML = orig;
-          btn.style.background = '';
-          btn.style.color = '';
-          form.reset();
-        }, 3500);
-      }, 1100);
-    });
-  });
-})();
-
-/* ── Merch store scaffolding ──────────────────────────────────
-   SQUARE WEB PAYMENTS SDK
-   1. Add to base.njk <head>:
-      <script src="https://web.squarecdn.com/v1/square.js"></script>
-   2. Initialize:
-      const payments = Square.payments('YOUR_APP_ID', 'YOUR_LOCATION_ID');
-   Docs: developer.squareup.com/docs/web-payments/overview
-
-   SHOPIFY BUY BUTTON
-   1. Install the Shopify Buy Button channel in your store
-   2. Embed the generated <script> snippet directly in the page
-   Docs: shopify.com/buy-button
-
-   STRIPE + SNIPCART
-   1. Add to base.njk <head>:
-      <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.css" />
-   2. Add before </body>:
-      <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_KEY"></div>
-      <script src="https://cdn.snipcart.com/themes/v3.3.3/default/snipcart.js"></script>
-   3. Add to any buy button:
-      class="snipcart-add-item"
-      data-item-id="sku"
-      data-item-price="35.00"
-      data-item-url="/merch-operations/"
-      data-item-name="Classic Tee"
-   Docs: docs.snipcart.com
-────────────────────────────────────────────────────────────── */
-
-/* ── Smooth anchor scroll ── */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
-});
+
+})();

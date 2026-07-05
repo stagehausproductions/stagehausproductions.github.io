@@ -4,6 +4,8 @@ module.exports = function (eleventyConfig) {
   // ── Passthrough copies ──────────────────────────────────────────
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/artist-template");
+  eleventyConfig.addPassthroughCopy("src/favicon.svg");
+
 
   // ── Watch targets ───────────────────────────────────────────────
   eleventyConfig.addWatchTarget("src/assets/css/");
