@@ -178,7 +178,7 @@
     const href = (link.getAttribute('href') || '').replace(/\/$/, '');
     if (href && href === currentPath) {
       link.classList.add('is-active');
-      if (link.classList.contains('header__dropdown-item')) {
+      if (link.classList.contains('header__dropdown-item')&& !link.hasAttribute('data-skip-active')) {
         /* Mark the Services trigger as active too */
         const trigger = qs('.header__dropdown-trigger');
         if (trigger) trigger.classList.add('is-active');
