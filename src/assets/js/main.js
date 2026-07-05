@@ -139,36 +139,62 @@
     });
   });
 
-  /* ============================================================
-     6. CONTACT FORM — basic client-side validation feedback
-     ============================================================ */
-  const contactForm = qs('[data-form="contact"]');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const required = qsa('[required]', contactForm);
-      let valid = true;
+/* ============================================================
+   6. CONTACT FORM — Formspree submission
+   ============================================================ */
+const contactForm = qs('[data-form="contact"]');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      required.forEach(field => {
-        field.classList.remove('is-error');
-        if (!field.value.trim()) {
-          field.classList.add('is-error');
-          valid = false;
-        }
+    const required = qsa('[required]', contactForm);
+    let valid = true;
+    required.forEach(field => {
+      field.classList.remove('is-error');
+      if (!field.value.trim()) {
+        field.classList.add('is-error');
+        valid = false;
+      }
+    });
+
+    if (!valid) return;
+
+    const btn = qs('[type="submit"]', contactForm);
+    if (btn) {
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+    }
+
+    const data = new FormData(contactForm);
+
+    try {
+      const res = await fetch('https://formspree.io/f/xnjkworn', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
       });
 
-      if (valid) {
-        const btn = qs('[type="submit"]', contactForm);
+      if (res.ok) {
+        contactForm.reset();
         if (btn) {
           btn.textContent = 'Message Sent ✓';
-          btn.disabled = true;
           btn.style.background = 'var(--electric)';
           btn.style.borderColor = 'var(--electric)';
           btn.style.color = '#fff';
         }
+      } else {
+        throw new Error('Server error');
       }
-    });
-  }
+    } catch {
+      if (btn) {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
+      alert('Something went wrong — please email us directly at hello@stagehausproductions.com');
+    }
+  });
+}
+
 
   /* ============================================================
      7. ACTIVE NAV — mark current page link
